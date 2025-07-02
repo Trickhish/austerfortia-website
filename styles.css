@@ -22,7 +22,7 @@ body {
 }
 .header {
   background: var(--color-white);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
   position: sticky;
   top: 0;
   z-index: 10;
@@ -82,7 +82,9 @@ body {
   min-height: 60vh;
   background: var(--color-white);
   text-align: center;
-  padding: 4rem 2rem 2rem 2rem;
+  padding: 0 2rem 2rem 2rem;
+  height: calc(95dvh + 3rem);
+  margin-top: -3rem;
 }
 .hero-title {
   font-size: 2.5rem;
@@ -104,6 +106,7 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 4rem 2rem;
+  background-color: var(--color-bg) !important;
 }
 .about-content h2 {
   font-size: 2rem;
@@ -151,6 +154,7 @@ body {
 }
 .portfolio-item {
   background: var(--color-bg);
+  
   border-radius: 1rem;
   overflow: hidden;
   width: 280px;
@@ -250,7 +254,7 @@ body.dark .footer {
 }
 body.dark .service,
 body.dark .portfolio-item {
-  background: #232323;
+  background: var(--color-bg);
   color: #f8f8f8;
 }
 body.dark .about-image {
@@ -415,16 +419,18 @@ body.dark .darkmode-toggle {
   margin: 0;
   width: 120px;
   text-align: center;
+  cursor: pointer;
 }
 .trusted-logos img {
-  width: 100px;
-  height: 50px;
+  width: 5rem;
+  height: 5rem;
   object-fit: contain;
   filter: grayscale(1) brightness(0.8);
-  transition: filter 0.3s;
+  transition: filter 0.3s, transform 0.3s;
 }
 .trusted-logos img:hover {
   filter: grayscale(0) brightness(1);
+  transform: scale(1.1);
 }
 .trusted-logos figcaption {
   font-size: 0.95rem;
@@ -452,7 +458,8 @@ body.dark .darkmode-toggle {
   margin: 3rem 0;
 }
 .testimonial-card {
-  background: var(--color-white);
+  background: var(--color-bg);
+  
   border-radius: 1.5rem;
   box-shadow: 0 4px 24px rgba(0,0,0,0.08);
   padding: 2.5rem 2rem 2rem 2rem;
@@ -521,7 +528,7 @@ body.dark .darkmode-toggle {
   position: relative;
   width: 100%;
   height: 100%;
-  transition: transform 0.7s cubic-bezier(.4,2,.6,1);
+  transition: transform 0.5s cubic-bezier(0.4, 0.0, 0.2, 1);
   transform-style: preserve-3d;
 }
 .flip-card:hover .flip-card-inner,
@@ -583,5 +590,96 @@ body.dark .darkmode-toggle {
     width: 95vw;
     max-width: 350px;
     height: 340px;
+  }
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+.quote_icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: block;
+  margin-bottom: 1.2rem;
+  color: var(--color-accent);
+  fill: currentColor;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: row;
+  background: var(--color-bg);
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  margin-bottom: 2.5rem;
+  overflow: hidden;
+  max-width: 900px;
+  min-height: 240px;
+  width: 100%;
+  align-items: stretch;
+  transition: box-shadow 0.2s;
+}
+.project-card:hover {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.13);
+}
+.project-img {
+  width: 320px;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.project-content {
+  padding: 2rem 2.2rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1 1 0;
+}
+.project-title {
+  font-size: 1.4rem;
+  margin: 0 0 0.7rem 0;
+  color: var(--color-primary);
+}
+.project-desc {
+  font-size: 1.08rem;
+  color: var(--color-secondary);
+  margin-bottom: 1.2rem;
+}
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+.tag {
+  background: var(--color-accent);
+  color: #fff;
+  border-radius: 2rem;
+  padding: 0.35em 1.1em;
+  font-size: 0.98rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  user-select: none;
+  transition: background 0.2s;
+}
+.tag:hover {
+  background: var(--color-primary);
+}
+@media (max-width: 900px) {
+  .project-card {
+    flex-direction: column;
+    max-width: 98vw;
+    min-height: 0;
+  }
+  .project-img {
+    width: 100%;
+    height: 220px;
+    border-radius: 1.5rem 1.5rem 0 0;
+  }
+  .project-content {
+    padding: 1.5rem 1.2rem 1.5rem 1.2rem;
   }
 }
