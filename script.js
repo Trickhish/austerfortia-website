@@ -124,4 +124,52 @@ document.addEventListener('DOMContentLoaded', () => {
       document.body.style.overflow = '';
     }
   });
+
+  // Hero rotating list
+  const rotatingTexts = [
+    "Créer votre site internet",
+    "Mettre en place et maintenir votre hébergement",
+    "Sécuriser et maintenir votre site web",
+    "Créer votre API sur-mesure",
+    "Choisir la meilleure solution d'hébergement"
+  ];
+  const rotatingEl = document.querySelector('.hero-rotating');
+  let rotatingIdx = 0;
+  function showRotatingText(idx) {
+    if (!rotatingEl) return;
+    rotatingEl.classList.add('fade');
+    setTimeout(() => {
+      rotatingEl.textContent = rotatingTexts[idx];
+      rotatingEl.classList.remove('fade');
+    }, 500);
+  }
+  if (rotatingEl) {
+    showRotatingText(rotatingIdx);
+    setInterval(() => {
+      rotatingIdx = (rotatingIdx + 1) % rotatingTexts.length;
+      showRotatingText(rotatingIdx);
+    }, 2500);
+  }
+
+  // Navbar active link on scroll
+  const navLinks = document.querySelectorAll('.nav-list a');
+  const sections = Array.from(document.querySelectorAll('main section, section'));
+  function setActiveNav() {
+    let current = '';
+    const scrollY = window.scrollY + 120;
+    sections.forEach(section => {
+      if (section.offsetTop <= scrollY && section.offsetTop + section.offsetHeight > scrollY) {
+        current = section.getAttribute('id');
+      }
+    });
+    navLinks.forEach(link => {
+      if (link.getAttribute('href') === '#' + current) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+  }
+  window.addEventListener('scroll', setActiveNav);
+  setActiveNav();
 }); 

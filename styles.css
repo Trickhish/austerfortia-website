@@ -70,6 +70,12 @@ body {
 .nav-list a:hover {
   color: var(--color-accent);
 }
+.nav-list a.active {
+  border-bottom: 2.5px solid var(--color-accent);
+  color: var(--color-accent);
+  padding-bottom: 2px;
+  transition: border-color 0.2s, color 0.2s;
+}
 .hero {
   display: flex;
   flex-direction: column;
@@ -372,4 +378,18 @@ body.dark .darkmode-toggle {
   .about, .services, .portfolio, .contact {
     padding: 2rem 1rem;
   }
+}
+
+.hero-rotating {
+  display: block;
+  margin: 2rem auto 0 auto;
+  font-size: 1.5rem;
+  color: var(--color-secondary);
+  min-height: 2.5rem;
+  text-align: center;
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+.hero-rotating.fade {
+  opacity: 0;
 }
