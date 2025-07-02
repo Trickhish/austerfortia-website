@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AUSTER Fortia</title>
+  <meta name="description" content="Site vitrine moderne et professionnel pour AUSTER Fortia.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+  <header class="header">
+    <nav class="nav">
+      <button class="darkmode-toggle" aria-label="Activer/désactiver le mode sombre">
+        <i class="fa-solid fa-moon darkmode-icon" aria-hidden="true"></i>
+      </button>
+      <button class="burger" aria-label="Ouvrir/fermer le menu" aria-expanded="false" aria-controls="nav-list">
+        <span class="burger-bar"></span>
+        <span class="burger-bar"></span>
+        <span class="burger-bar"></span>
+      </button>
+      <div class="logo">AUSTER Fortia</div>
+      <ul class="nav-list" id="nav-list">
+        <li><a href="#hero">Accueil</a></li>
+        <li><a href="#about">À propos</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="hero" class="hero">
+      <h1 class="hero-title">Bienvenue chez <span class="brand">AUSTER Fortia</span></h1>
+      <p class="hero-subtitle">Votre partenaire pour des solutions professionnelles et modernes</p>
+    </section>
+
+    <section id="about" class="about">
+      <div class="about-content">
+        <h2>À propos</h2>
+        <p>Nous combinons expertise, innovation et simplicité pour offrir des services de qualité supérieure.</p>
+      </div>
+      <div class="about-image parallax"></div>
+    </section>
+
+    <section id="services" class="services">
+      <h2>Nos Services</h2>
+      <div class="services-list">
+        <article class="service reveal">
+          <h3>Service 1</h3>
+          <p>Description du service 1.</p>
+        </article>
+        <article class="service reveal">
+          <h3>Service 2</h3>
+          <p>Description du service 2.</p>
+        </article>
+        <article class="service reveal">
+          <h3>Service 3</h3>
+          <p>Description du service 3.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="portfolio" class="portfolio">
+      <h2>Témoignages & Portfolio</h2>
+      <div class="portfolio-list">
+        <figure class="portfolio-item">
+          <img src="" alt="Projet 1" />
+          <figcaption>Projet 1</figcaption>
+        </figure>
+        <figure class="portfolio-item">
+          <img src="" alt="Projet 2" />
+          <figcaption>Projet 2</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>Contactez-nous</h2>
+      <form class="contact-form">
+        <label for="name">Nom</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required></textarea>
+        <button type="submit">Envoyer</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2024 AUSTER Fortia. Tous droits réservés.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html> 
