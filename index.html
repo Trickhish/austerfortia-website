@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
-<body>
+<body class="">
   <header class="header">
     <nav class="nav">
       <button class="darkmode-toggle" aria-label="Activer/désactiver le mode sombre">
@@ -38,31 +38,61 @@
     </section>
 
     <section id="about" class="about">
-      <div class="about-content">
-        <h2>Nos domaines d'expertise</h2>
-        <h3>Site Web</h3>
-        <ul>
-          <li>Création de sites web professionnels</li>
-          <li>Maintenance, mise à jour et ajout de contenu</li>
-          <li>Migration d'hébergement et accompagnement au changement</li>
-          <li>Conseils personnalisés pour la réussite de votre projet digital</li>
-        </ul>
-        <h3>Big Data</h3>
-        <ul>
-          <li>Collecte massive de données depuis internet</li>
-          <li>Création et gestion de bases de données</li>
-          <li>Formatage, tri et normalisation de données</li>
-          <li>Visualisation et analyse de données (statistiques, graphiques, diagrammes)</li>
-          <li>Support et accompagnement pour l'installation de bases de données</li>
-        </ul>
-        <h3>IOT / Logiciel</h3>
-        <ul>
-          <li>Création et maintenance de logiciels sur-mesure</li>
-          <li>Mise en place et gestion de réseaux IOT</li>
-          <li>Visualisation et suivi de données de capteurs</li>
-          <li>Automatisation d'actions et alertes personnalisées</li>
-          <li>Déclenchement d'appareils à distance</li>
-        </ul>
+      <h2 style="width:100%;text-align:center;margin-bottom:0;">Nos domaines d'expertise</h2>
+      <div class="expertise-cards">
+        <div class="flip-card" tabindex="0">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <span class="expertise-icon"><i class="fa-solid fa-globe"></i></span>
+              <h3>Site Web</h3>
+              <p>Création, maintenance et accompagnement digital</p>
+            </div>
+            <div class="flip-card-back">
+              <ul>
+                <li>Création de sites web professionnels</li>
+                <li>Maintenance, mise à jour et ajout de contenu</li>
+                <li>Migration d'hébergement et accompagnement au changement</li>
+                <li>Conseils personnalisés pour la réussite de votre projet digital</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card" tabindex="0">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <span class="expertise-icon"><i class="fa-solid fa-database"></i></span>
+              <h3>Big Data</h3>
+              <p>Collecte, gestion et valorisation de vos données</p>
+            </div>
+            <div class="flip-card-back">
+              <ul>
+                <li>Collecte massive de données depuis internet</li>
+                <li>Création et gestion de bases de données</li>
+                <li>Formatage, tri et normalisation de données</li>
+                <li>Visualisation et analyse de données (statistiques, graphiques, diagrammes)</li>
+                <li>Support et accompagnement pour l'installation de bases de données</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card" tabindex="0">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <span class="expertise-icon"><i class="fa-solid fa-microchip"></i></span>
+              <h3>IOT / Logiciel</h3>
+              <p>Solutions logicielles et objets connectés sur-mesure</p>
+            </div>
+            <div class="flip-card-back">
+              <ul>
+                <li>Création et maintenance de logiciels sur-mesure</li>
+                <li>Mise en place et gestion de réseaux IOT</li>
+                <li>Visualisation et suivi de données de capteurs</li>
+                <li>Automatisation d'actions et alertes personnalisées</li>
+                <li>Déclenchement d'appareils à distance</li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="about-image parallax">
         <img src="https://picsum.photos/400/300?grayscale" alt="Présentation de l'équipe AUSTER Fortia" style="width:100%;height:auto;border-radius:1rem;object-fit:cover;" />
@@ -107,26 +137,31 @@
     <section id="portfolio" class="portfolio">
       <h2>Témoignages & Portfolio</h2>
       <div class="testimonials-list">
-        <blockquote class="testimonial">
-          <p>"AUSTER Fortia a su répondre à nos besoins de migration et de sécurisation de site avec efficacité et pédagogie."</p>
-          <footer>— Client PME</footer>
-        </blockquote>
-        <blockquote class="testimonial">
-          <p>"Grâce à leur accompagnement, nous avons pu visualiser et exploiter nos données de capteurs en toute simplicité."</p>
-          <footer>— Responsable technique</footer>
-        </blockquote>
-        <blockquote class="testimonial">
-          <p>"Grâce à AUSTER Fortia, nous avons franchi un cap dans notre transformation digitale. Une équipe à l'écoute et très professionnelle !"</p>
-          <footer>— Marie Dupont, CEO TechNova</footer>
-        </blockquote>
-        <blockquote class="testimonial">
-          <p>"Un accompagnement stratégique de grande qualité, des résultats concrets et mesurables dès les premiers mois."</p>
-          <footer>— Julien Martin, Directeur Général, BatiPro</footer>
-        </blockquote>
-        <blockquote class="testimonial">
-          <p>"Les formations dispensées par AUSTER Fortia ont boosté la motivation et l'efficacité de nos équipes."</p>
-          <footer>— Sophie Bernard, RH, GreenLog</footer>
-        </blockquote>
+        <div class="testimonial-card">
+          <span class="quote">&ldquo;</span>
+          <div class="testimonial-text">AUSTER Fortia a su répondre à nos besoins de migration et de sécurisation de site avec efficacité et pédagogie.</div>
+          <div class="testimonial-author">Client PME</div>
+        </div>
+        <div class="testimonial-card">
+          <span class="quote">&ldquo;</span>
+          <div class="testimonial-text">Grâce à leur accompagnement, nous avons pu visualiser et exploiter nos données de capteurs en toute simplicité.</div>
+          <div class="testimonial-author">Responsable technique</div>
+        </div>
+        <div class="testimonial-card">
+          <span class="quote">&ldquo;</span>
+          <div class="testimonial-text">Grâce à AUSTER Fortia, nous avons franchi un cap dans notre transformation digitale. Une équipe à l'écoute et très professionnelle !</div>
+          <div class="testimonial-author">Marie Dupont, CEO TechNova</div>
+        </div>
+        <div class="testimonial-card">
+          <span class="quote">&ldquo;</span>
+          <div class="testimonial-text">Un accompagnement stratégique de grande qualité, des résultats concrets et mesurables dès les premiers mois.</div>
+          <div class="testimonial-author">Julien Martin, Directeur Général, BatiPro</div>
+        </div>
+        <div class="testimonial-card">
+          <span class="quote">&ldquo;</span>
+          <div class="testimonial-text">Les formations dispensées par AUSTER Fortia ont boosté la motivation et l'efficacité de nos équipes.</div>
+          <div class="testimonial-author">Sophie Bernard, RH, GreenLog</div>
+        </div>
       </div>
       <div class="portfolio-list">
         <figure class="portfolio-item">
@@ -156,6 +191,36 @@
         <textarea id="message" name="message" required></textarea>
         <button type="submit">Envoyer</button>
       </form>
+    </section>
+
+    <section class="trusted-by">
+      <h2>Ils nous ont fait confiance 🤝</h2>
+      <div class="trusted-logos">
+        <figure>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft" />
+          <figcaption>Microsoft</figcaption>
+        </figure>
+        <figure>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="IBM" />
+          <figcaption>IBM</figcaption>
+        </figure>
+        <figure>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Capgemini_201x_logo.svg" alt="Capgemini" />
+          <figcaption>Capgemini</figcaption>
+        </figure>
+        <figure>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Logo_SNCF_2011.svg" alt="SNCF" />
+          <figcaption>SNCF</figcaption>
+        </figure>
+        <figure>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Logo_Air_France.svg" alt="Air France" />
+          <figcaption>Air France</figcaption>
+        </figure>
+        <figure>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/2/2d/Logo_Credit_Agricole.svg" alt="Crédit Agricole" />
+          <figcaption>Crédit Agricole</figcaption>
+        </figure>
+      </div>
     </section>
   </main>
 

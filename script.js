@@ -172,4 +172,33 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   window.addEventListener('scroll', setActiveNav);
   setActiveNav();
+
+  // Flip cards (expertise) : toggle au clic sur mobile, ferme les autres si besoin
+  const allFlipCards = document.querySelectorAll('.flip-card');
+  allFlipCards.forEach(card => {
+    card.addEventListener('click', function(e) {
+      if (window.matchMedia('(hover: none) and (pointer: coarse)').matches) {
+        // Fermer toutes les autres cartes
+        allFlipCards.forEach(c => { if (c !== this) c.classList.remove('flipped'); });
+        // Toggle la carte cliquée
+        this.classList.toggle('flipped');
+        e.stopPropagation();
+      }
+    });
+    card.addEventListener('keypress', function(e) {
+      if ((e.key === 'Enter' || e.key === ' ') && window.matchMedia('(hover: none) and (pointer: coarse)').matches) {
+        e.preventDefault();
+        allFlipCards.forEach(c => { if (c !== this) c.classList.remove('flipped'); });
+        this.classList.toggle('flipped');
+      }
+    });
+  });
+  // Fermer toutes les cartes si clic en dehors
+  document.addEventListener('click', function(e) {
+    if (window.matchMedia('(hover: none) and (pointer: coarse)').matches) {
+      if (![...allFlipCards].some(card => card.contains(e.target))) {
+        allFlipCards.forEach(card => card.classList.remove('flipped'));
+      }
+    }
+  });
 }); 
